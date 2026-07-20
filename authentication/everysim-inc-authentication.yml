@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: searched
+source: https://auth.everysim.io/realms/everysim/.well-known/openid-configuration
+docs: https://auth.everysim.io/realms/everysim/.well-known/openid-configuration
+notes: >-
+  Derived from EverySim's live OpenID Connect discovery document (Keycloak,
+  realm "everysim"). No public OpenAPI is available, so this profile is
+  captured directly from the provider's IdP configuration. The everysim.io
+  web app authenticates the "everysim-web" client via authorization-code + PKCE.
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+  - implicit
+  - password
+  - deviceCode
+schemes:
+- name: openIdConnect
+  type: openIdConnect
+  openIdConnectUrl: https://auth.everysim.io/realms/everysim/.well-known/openid-configuration
+  issuer: https://auth.everysim.io/realms/everysim
+  sources:
+  - well-known/everysim-inc-openid-configuration.json
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.everysim.io/realms/everysim/protocol/openid-connect/auth
+    tokenUrl: https://auth.everysim.io/realms/everysim/protocol/openid-connect/token
+    pkce: true
+    code_challenge_methods:
+    - S256
+    - plain
+  - flow: clientCredentials
+    tokenUrl: https://auth.everysim.io/realms/everysim/protocol/openid-connect/token
+endpoints:
+  authorization: https://auth.everysim.io/realms/everysim/protocol/openid-connect/auth
+  token: https://auth.everysim.io/realms/everysim/protocol/openid-connect/token
+  userinfo: https://auth.everysim.io/realms/everysim/protocol/openid-connect/userinfo
+  introspection: https://auth.everysim.io/realms/everysim/protocol/openid-connect/token/introspect
+  end_session: https://auth.everysim.io/realms/everysim/protocol/openid-connect/logout
+  jwks_uri: https://auth.everysim.io/realms/everysim/protocol/openid-connect/certs
