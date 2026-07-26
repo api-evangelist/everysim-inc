@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of /.well-known/ on everysim-inc hosts
+notes: >-
+  The everysim.io web application is fully gated behind Keycloak SSO; every
+  /.well-known/ path on everysim.io 307-redirects to the silent-sso-init auth
+  flow rather than serving a document. The one real, publicly reachable
+  discovery document is the OpenID Connect configuration for the "everysim"
+  realm on the identity host auth.everysim.io.
+hosts:
+- host: https://auth.everysim.io/realms/everysim
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: everysim-inc-openid-configuration.json
+  - path: /.well-known/uma2-configuration
+    status: 200
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://everysim.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 307
+  - path: /.well-known/openid-configuration
+    status: 307
+  - path: /.well-known/oauth-authorization-server
+    status: 307
+  - path: /.well-known/api-catalog
+    status: 307
+  - path: /.well-known/ai-plugin.json
+    status: 307

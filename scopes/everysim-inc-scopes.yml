@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://auth.everysim.io/realms/everysim/.well-known/openid-configuration
+docs: https://auth.everysim.io/realms/everysim/.well-known/openid-configuration
+notes: >-
+  Scopes advertised by EverySim's OpenID Connect discovery document
+  (scopes_supported) for the "everysim" realm. Standard OIDC + Keycloak
+  realm scopes; no public OpenAPI declares per-operation scopes.
+schemes:
+- name: openIdConnect
+  source: well-known/everysim-inc-openid-configuration.json
+  authorizationUrl: https://auth.everysim.io/realms/everysim/protocol/openid-connect/auth
+  tokenUrl: https://auth.everysim.io/realms/everysim/protocol/openid-connect/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication
+- scope: profile
+  description: Basic profile claims
+- scope: email
+  description: Email address claim
+- scope: address
+  description: Postal address claim
+- scope: phone
+  description: Phone number claim
+- scope: roles
+  description: Realm and client role mappings
+- scope: organization
+  description: Organization membership claims
+- scope: offline_access
+  description: Refresh-token / offline access
+- scope: microprofile-jwt
+  description: MicroProfile JWT claims (groups, upn)
+- scope: service_account
+  description: Service-account (client-credentials) scope
+- scope: web-origins
+  description: Allowed CORS web origins
+- scope: acr
+  description: Authentication Context Class Reference
+- scope: basic
+  description: Basic realm claims

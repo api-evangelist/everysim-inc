@@ -1,7 +1,29 @@
 aid: everysim-inc
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/everysim-inc.png
 name: EverySim Inc.
-description: EverySim Inc. is a company surfaced as a portfolio company of 500-global and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  EverySim Inc. (everysim.io) is a 500 Global-backed company that operates a
+  private, authentication-gated web application. Every public path on
+  everysim.io redirects unauthenticated visitors into a Keycloak-based
+  OpenID Connect / OAuth 2.0 single-sign-on flow (realm "everysim", client
+  "everysim-web", authorization-code with PKCE). As of this profile no public
+  developer API, documentation, SDK, CLI, or developer portal surface was
+  found; the only publicly reachable machine-readable endpoint is the realm's
+  OpenID Connect discovery document on auth.everysim.io. This entry captures
+  the provider's verifiable identity, authentication model, and domain-security
+  posture pending a public API surface.
 url: https://raw.githubusercontent.com/api-evangelist/everysim-inc/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +33,14 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Authentication
+- OpenID Connect
+- OAuth 2.0
+- Single Sign-On
+- Identity
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +48,21 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/everysim-inc-domain-security.yml
+- type: WellKnown
+  url: well-known/everysim-inc-well-known.yml
+- type: Authentication
+  url: authentication/everysim-inc-authentication.yml
+- type: OAuthScopes
+  url: scopes/everysim-inc-scopes.yml
+- type: Login
+  name: EverySim single sign-on
+  url: https://auth.everysim.io/realms/everysim/protocol/openid-connect/auth
 - type: Website
   url: https://everysim.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
