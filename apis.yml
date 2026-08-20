@@ -38,6 +38,12 @@ tags:
 - Company
 - Authentication
 - OpenID Connect
+- Single Sign-On
+- Identity
+tags_raw:
+- Company
+- Authentication
+- OpenID Connect
 - OAuth 2.0
 - Single Sign-On
 - Identity
