@@ -23,7 +23,7 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/everysim-inc.png
-name: EverySim Inc.
+name: EverySim
 description: >-
   EverySim Inc. (everysim.io) is a 500 Global-backed company that operates a
   private, authentication-gated web application. Every public path on
@@ -48,13 +48,11 @@ modified: '2026-07-19'
 tags:
 - Company
 - Authentication
-- OpenID Connect
 - SSO
 - Identity
 tags_raw:
 - Company
 - Authentication
-- OpenID Connect
 - OAuth 2.0
 - Single Sign-On
 - Identity
@@ -83,3 +81,6 @@ x-enrichment:
   status: backfilled
   pass: local-v1
   note: backfilled from .gitignore signal + verified work evidence
+x-legal-name: EverySim Inc.
+x-tags-removed:
+- OpenID Connect
